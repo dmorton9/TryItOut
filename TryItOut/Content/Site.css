@@ -1,0 +1,170 @@
+﻿/* ************* */
+/* Site wide CSS */
+/* ************* */
+
+/* HTML */
+
+body {
+    padding-top: 55px;
+    padding-bottom: 10px;
+}
+
+header{
+}
+
+aside {
+    text-align: center;
+    padding-top: 10px;
+}
+
+footer {
+
+}
+
+article {
+    padding:10px;
+}
+
+article img {
+    width:100%;
+    height:100%;
+    box-shadow:6px 6px 8px #777;
+    margin-bottom:20px;
+}
+
+/* Bootstrap */
+
+.navbar {
+    margin:5px;
+}
+
+/* media queries */
+
+@media (max-width: 767px ) {
+    .navbar {
+        margin:0px;
+    }
+    .top_menu {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 991px ) {
+    .Column-right-header {
+        color: white;
+        background-color: black;
+    }
+}
+
+/* Site CSS */
+
+.Column-right-top {
+
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.top_menu {
+    background-color: rgb(34,34,34);
+    color: orange;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: right;
+}
+
+/*is the h4 element*/
+.Column-right-header {
+    color: green;
+    background-color: dimgrey;
+}
+
+.top_menu_list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(34,34,34);
+}
+
+.top_menu_list_item {
+    float: right;
+}
+
+.top_menu_list_item_anchor {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+a.top_menu_list_item_anchor:hover {
+    background-color: orange;
+    color: black;
+    text-decoration: none;
+}
+
+.fill-screen {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.content-holder {
+    width:100%;
+    max-height:300px;
+    text-align:center;
+}
+
+.fixed-attachment {
+    background-attachment:fixed;
+}
+
+.title-row{
+    position:relative;
+    min-height:300px;
+}
+
+.title-image {
+    position:absolute;
+    padding:20px;
+    top:50%;
+    left:50%;
+    margin-right:-50%;
+    transform:translate(-50%,-50%);
+}
+
+.down-button {
+    position:absolute;
+    bottom:40px;
+    width:100%;
+    text-align: center;
+}
+
+.development-a {
+    background-image: url(../../Content/images/Development-A.png);
+}
+
+.technology-image {
+    width: 75%;
+    height:75%;
+    padding: 10px;
+}
+
+.technology-text {
+    padding:10px;
+}
+
+@media (max-width:1024px) {
+    .fixed-attachment {
+        background-attachment:scroll;
+    }
+}
+
+/* ************************ */
