@@ -54,6 +54,7 @@
     <Compile Include="DTOs\RegisteredUsersDTO.cs" />
     <Compile Include="DTOs\ToDoTasksDTO.cs" />
     <Compile Include="IToDoTasksUnitOfWork.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonsDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

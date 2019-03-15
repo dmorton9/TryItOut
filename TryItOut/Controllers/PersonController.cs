@@ -46,5 +46,24 @@ namespace TryItOut.Controllers
             return Redirect("~/home");
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(FormCollection frmcollection)
+        {
+
+            if (ModelState.IsValid)
+            {
+                var name = frmcollection["Name"].ToString();
+
+                return View("home");
+            }
+
+            return View();
+        }
+
     }
 }

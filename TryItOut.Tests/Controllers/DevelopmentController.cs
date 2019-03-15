@@ -1,31 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TryItOut;
 using TryItOut.Controllers;
 
 namespace TryItOut.Tests.Controllers
 {
-    /* Pointers to adopt 
-     
-         1. Name convention : UnitOfWork_InitialCondition_ExpectedResult 
-         2. Strategy for tests
-            a. successful path through method. 
-            b. unsucessful paths(s) through method */
-
     [TestClass]
-    public class HomeControllerTest
+    public class DevelopmentControllerTest
     {
         [TestMethod]
+        [Description("Development Controller Unit test")]
         [Owner("ddm")]
         [TestCategory("Controller")]
-        public void Index()
+        public void TestForIndexController()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            DevelopmentController controller = new DevelopmentController();
 
             // Act
             ViewResult result = controller.Index() as ViewResult;
@@ -37,10 +27,10 @@ namespace TryItOut.Tests.Controllers
         [TestMethod]
         [Owner("ddm")]
         [TestCategory("Controller")]
-        public void TestForHomeIndexView()
+        public void TestForIndexView()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            DevelopmentController controller = new DevelopmentController();
 
             // Act
             var result = controller.Index() as ViewResult;
@@ -52,31 +42,31 @@ namespace TryItOut.Tests.Controllers
         [TestMethod]
         [Owner("ddm")]
         [TestCategory("Controller")]
-        public void About()
+        public void TestForAltController()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            DevelopmentController controller = new DevelopmentController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
+            ViewResult result = controller.Index() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            Assert.IsNotNull(result);
         }
 
         [TestMethod]
         [Owner("ddm")]
         [TestCategory("Controller")]
-        public void TestForAboutIndexView()
+        public void TestForAltView()
         {
             // Arrange
-            HomeController controller = new HomeController();
+            DevelopmentController controller = new DevelopmentController();
 
             // Act
-            var result = controller.About() as ViewResult;
+            var result = controller.Alt() as ViewResult;
 
             // Assert
-            Assert.AreEqual("About", result.ViewName);
+            Assert.AreEqual("Alt", result.ViewName);
         }
     }
 }

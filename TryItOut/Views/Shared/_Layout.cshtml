@@ -19,11 +19,19 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/datatable")
 
+    <link href="~/Content/SideMenu.css" rel="stylesheet" />
+    <link href="~/Content/HangingMenu.css" rel="stylesheet" />
 
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="HangingMenu">
+        Menu
+    </div>
+
+    <div class="container">
+
+        <div class="navbar">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -41,12 +49,14 @@
                 </ul>
             </div>
         </div>
+
         <div>
             @RenderBody()
         </div>
+
         <footer>
             <hr />
-            <p>&copy; @DateTime.Now.Year - Try It Out ASP Application</p>
+            &copy; @DateTime.Now.Year - Try It Out ASP Application
         </footer>
     </div>
 

@@ -9,11 +9,8 @@ namespace TryItOut.Controllers
     public class DevelopmentController : Controller
     {
         // GET: Development
-        public ActionResult Index()
-        {
-            return View();
-        }
+        public ActionResult Index() => View("Index");
 
-        public ActionResult Alt() => View();
+        public ActionResult Alt() => View("Alt");
     }
 }

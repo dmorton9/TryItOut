@@ -18,20 +18,23 @@ namespace TryItOut
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/bootstrap-datepicker.js",
-                      "~/Scripts/DatePickerReady.js"));
+                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/bootstrap-datepicker.js",
+                        "~/Scripts/DatePickerReady.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/site").Include(
-                      "~/Scripts/site.js"));
+                        "~/Scripts/site.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/easing").Include(
+                        "~/Scripts/easing.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/datatable").Include(
-                      "~/Scripts/jquery.dataTables.js"));
+                        "~/Scripts/jquery.dataTables.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-datepicker3.css",
-                      "~/Content/site.css"));
+                        "~/Content/bootstrap.css",
+                        "~/Content/bootstrap-datepicker3.css",
+                        "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/datatablesCss").Include(
                         "~/Content/css/jquery.dataTables.css"));

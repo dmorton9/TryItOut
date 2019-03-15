@@ -1,2 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfRegisteredUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfRegisteredUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <User>
+    <identifier>1</identifier>
+    <username>dmorton</username>
+    <firstName>David</firstName>
+    <lastname>Morton</lastname>
+    <password>ABC$123</password>
+    <attempts>0</attempts>
+    <locked>false</locked>
+  </User>
+  <User>
+    <identifier>2</identifier>
+    <username>rmoore</username>
+    <firstName>Richard</firstName>
+    <lastname>Moore</lastname>
+    <password>ABC$123</password>
+    <attempts>0</attempts>
+    <locked>false</locked>
+  </User>
+  <User>
+    <identifier>3</identifier>
+    <username>srollings</username>
+    <firstName>Sue</firstName>
+    <lastname>Rollings</lastname>
+    <password>ABC$123</password>
+    <attempts>0</attempts>
+    <locked>false</locked>
+  </User>
+  <User>
+    <identifier>4</identifier>
+    <username>hcastle</username>
+    <firstName>Heath</firstName>
+    <lastname>Castle</lastname>
+    <password>ABC$123</password>
+    <attempts>0</attempts>
+    <locked>false</locked>
+  </User>
+  <User>
+    <identifier>5</identifier>
+    <username>jsanai</username>
+    <firstName>James</firstName>
+    <lastname>Sania</lastname>
+    <password>ABC$123</password>
+    <attempts>0</attempts>
+    <locked>false</locked>
+  </User>
+</ArrayOfRegisteredUser>
