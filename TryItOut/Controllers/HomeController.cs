@@ -30,5 +30,7 @@ namespace TryItOut.Controllers
             return View("About");
         }
 
+        public ActionResult Welcome() => View("Welcome");
+
     }
 }

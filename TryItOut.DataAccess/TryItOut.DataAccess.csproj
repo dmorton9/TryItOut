@@ -60,7 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PersonRepository.cs" />
+    <Compile Include="PersonDetailsRepository.cs" />
     <Compile Include="Helpers\IGenericTransaction.cs" />
     <Compile Include="Helpers\IsolationLevel.cs" />
     <Compile Include="Helpers\IUnitOfWork.cs" />

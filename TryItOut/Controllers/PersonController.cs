@@ -4,6 +4,8 @@ using TryItOut.ViewModels;
 using TryItOut.Helpers.Filters;
 using TryItOut.ToDoTasks.ViewModels;
 using TryItOut.Logic;
+using TryItOut.CommonInterfaces;
+using TryItOut.Service;
 
 namespace TryItOut.Controllers
 {
@@ -11,17 +13,16 @@ namespace TryItOut.Controllers
     [Footer]
     public class PersonController : BaseController
     {
-        // GET: Person
+        private readonly ILogin_Service loginService = null;
+
+        public PersonController(ILogin_Service loginService)
+        {
+            this.loginService = loginService;
+        }
+
         public ActionResult Index()
         {
             var person = new PersonViewModel();
-
-            RegisteredUsersService service = new RegisteredUsersService();
-            service.Save();
-
-            //var  users = service.Read();
-
-            service.Update();
 
             return View();
         }
@@ -48,21 +49,36 @@ namespace TryItOut.Controllers
 
         public ActionResult Login()
         {
-            return View();
+            LoginViewModel viewModel = new LoginViewModel();
+
+            return View("Login", viewModel);
         }
 
         [HttpPost]
         public ActionResult Login(FormCollection frmcollection)
         {
+            LoginViewModel viewModel = new LoginViewModel();
 
             if (ModelState.IsValid)
             {
-                var name = frmcollection["Name"].ToString();
+                var userName = frmcollection["UserName"].ToString();
+                var password = frmcollection["password"].ToString();
 
-                return View("home");
+                /* need dto model for return login success and status */
+                var userLogin = loginService.LoginUser(userName, password);
+
+                if (userLogin.IsLoggedIn)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    /* mapper required */
+                    viewModel.Message = userLogin.Message;
+                }
             }
 
-            return View();
+            return View("Login", viewModel);
         }
 
     }

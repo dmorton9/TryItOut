@@ -22,7 +22,7 @@ namespace TryItOut.Tests.Controllers
         [TestMethod]
         [Owner("ddm")]
         [TestCategory("Controller")]
-        public void Index()
+        public void HomeController_ViewResultNotNull()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -37,7 +37,7 @@ namespace TryItOut.Tests.Controllers
         [TestMethod]
         [Owner("ddm")]
         [TestCategory("Controller")]
-        public void TestForHomeIndexView()
+        public void HomeController_IndexViewName()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -52,7 +52,7 @@ namespace TryItOut.Tests.Controllers
         [TestMethod]
         [Owner("ddm")]
         [TestCategory("Controller")]
-        public void About()
+        public void HomeController_AboutViewBagMessage()
         {
             // Arrange
             HomeController controller = new HomeController();
@@ -67,7 +67,7 @@ namespace TryItOut.Tests.Controllers
         [TestMethod]
         [Owner("ddm")]
         [TestCategory("Controller")]
-        public void TestForAboutIndexView()
+        public void HomeController_AboutViewName()
         {
             // Arrange
             HomeController controller = new HomeController();

@@ -44,8 +44,10 @@
     <Compile Include="Interfaces\IPerson.cs" />
     <Compile Include="Interfaces\IToDoTask.cs" />
     <Compile Include="Interfaces\IRegisteredUser.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\RegisteredUser.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\ToDoTask.cs" />
   </ItemGroup>

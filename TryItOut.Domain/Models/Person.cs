@@ -18,7 +18,7 @@ namespace TryItOut.Domain
      
         public string Identifier { get; set; }
 
-        public DateTime? BirthDate { get; set; }
+        public DateTime? dob { get; set; }
 
         public Person() {
 
@@ -27,7 +27,7 @@ namespace TryItOut.Domain
             Address = string.Empty;
             Postcode = string.Empty;
             Nationality = string.Empty;
-            BirthDate = DateTime.MinValue;
+            dob = DateTime.MinValue;
         }
     }
 }

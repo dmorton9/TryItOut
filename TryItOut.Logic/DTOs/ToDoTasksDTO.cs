@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TryItOut.Logic.DTOs
+namespace TryItOut.Service
 {
     /* Single ToDoTask for DTO */
     public class ToDoTaskDTO

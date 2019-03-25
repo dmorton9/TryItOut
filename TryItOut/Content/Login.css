@@ -1,0 +1,11 @@
+﻿/* login style */
+
+article h3 {
+    text-align:center;
+}
+
+.LoginMessage {
+    text-align:center;
+    margin:10px;
+    color:red;
+}

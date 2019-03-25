@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAddress.cs" />
+    <Compile Include="IGenericRepository.cs" />
     <Compile Include="ILogin.cs" />
     <Compile Include="IPerson.cs" />
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="IRegisteredUserRepository.cs" />
+    <Compile Include="IRegisteredUsersService.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IToDoTasksRepository.cs" />
     <Compile Include="IToDoTasksService.cs" />

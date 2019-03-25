@@ -1,48 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfRegisteredUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
-  <User>
+<ArrayOfRegisteredUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <RegisteredUser>
     <identifier>1</identifier>
     <username>dmorton</username>
-    <firstName>David</firstName>
+    <password>ABC$123</password>
+    <firstname>David</firstname>
     <lastname>Morton</lastname>
-    <password>ABC$123</password>
-    <attempts>0</attempts>
-    <locked>false</locked>
-  </User>
-  <User>
+    <IsActive>Locked</IsActive>
+    <lastLoggedIn>Never</lastLoggedIn>
+  </RegisteredUser>
+  <RegisteredUser>
     <identifier>2</identifier>
-    <username>rmoore</username>
-    <firstName>Richard</firstName>
-    <lastname>Moore</lastname>
+    <username>esmith</username>
     <password>ABC$123</password>
-    <attempts>0</attempts>
-    <locked>false</locked>
-  </User>
-  <User>
+    <firstname>Ellen</firstname>
+    <lastname>Smith</lastname>
+    <IsActive>Locked</IsActive>
+    <lastLoggedIn>Never</lastLoggedIn>
+  </RegisteredUser>
+  <RegisteredUser>
     <identifier>3</identifier>
-    <username>srollings</username>
-    <firstName>Sue</firstName>
-    <lastname>Rollings</lastname>
+    <username>mjones</username>
     <password>ABC$123</password>
-    <attempts>0</attempts>
-    <locked>false</locked>
-  </User>
-  <User>
-    <identifier>4</identifier>
-    <username>hcastle</username>
-    <firstName>Heath</firstName>
-    <lastname>Castle</lastname>
-    <password>ABC$123</password>
-    <attempts>0</attempts>
-    <locked>false</locked>
-  </User>
-  <User>
-    <identifier>5</identifier>
-    <username>jsanai</username>
-    <firstName>James</firstName>
-    <lastname>Sania</lastname>
-    <password>ABC$123</password>
-    <attempts>0</attempts>
-    <locked>false</locked>
-  </User>
+    <firstname>Mark</firstname>
+    <lastname>Jones</lastname>
+    <IsActive>Locked</IsActive>
+    <lastLoggedIn>Never</lastLoggedIn>
+  </RegisteredUser>
 </ArrayOfRegisteredUser>

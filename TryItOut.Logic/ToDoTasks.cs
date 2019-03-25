@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TryItOut.CommonInterfaces;
 using TryItOut.DataAccess;
 using TryItOut.Domain;
-using TryItOut.Logic.DTOs;
 
 namespace TryItOut.Service
 {

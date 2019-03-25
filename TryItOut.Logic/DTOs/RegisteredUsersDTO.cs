@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TryItOut.Logic.DTOs
+namespace TryItOut.Service
 {
     /* Single ToDoTask for DTO */
     public class RegisteredUserDTO
@@ -14,7 +14,7 @@ namespace TryItOut.Logic.DTOs
         public string Password { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
-        public bool IsActive { get; set; }
+        public string IsActive { get; set; }
     }
 
     /* Full DTO for ToDo Tasks */

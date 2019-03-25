@@ -8,11 +8,58 @@ using TryItOut;
 using TryItOut.App_Start;
 using TryItOut.Helpers.Logger;
 using System.Web.Http;
+using System.Web.SessionState;
+using TryItOut.Controllers;
+using TryItOut.Service;
+using TryItOut.CommonInterfaces;
 
 [assembly: PreApplicationStartMethod(typeof(MvcApplication), "Register")]
 
 namespace TryItOut
 {
+    /* ********************************************************************
+    /* possible way of creating an instance of a controller with parameter,
+     * using an IoC dependency Injection UNITY 
+     * ******************************************************************** */
+
+    public class CustomControllerFactory : IControllerFactory
+    {
+        private readonly string _controllerNamespace = "TryItOut.Controllers";
+
+        public CustomControllerFactory()
+        {
+        }
+
+        public IController CreateController(System.Web.Routing.RequestContext requestContext, string controllerName)
+        {
+            Type controllerType = Type.GetType(string.Concat(_controllerNamespace, ".", controllerName, "Controller"));
+            IController controller = Activator.CreateInstance(controllerType) as Controller;
+
+            if( controllerName == "Person")
+            {
+                ILogin_Service loginService = new Login_Service();
+                controller = Activator.CreateInstance(controllerType, new[] { loginService } ) as Controller;
+            }
+
+            return controller;
+        }
+
+        public System.Web.SessionState.SessionStateBehavior GetControllerSessionBehavior(System.Web.Routing.RequestContext requestContext, string controllerName)
+        {
+            return SessionStateBehavior.Default;
+        }
+
+        public void ReleaseController(IController controller)
+        {
+            var disposable = controller as IDisposable;
+            if (disposable != null)
+            {
+                disposable.Dispose();
+            }
+
+        }
+    }
+
     public class MvcApplication : System.Web.HttpApplication
     {
         public static void Register()
@@ -25,6 +72,7 @@ namespace TryItOut
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
             AreaRegistration.RegisterAllAreas();
+            UnityConfig.RegisterComponents();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
@@ -42,6 +90,8 @@ namespace TryItOut
             // Automapper
             // **********
             AutoMapperConfig.RegisterMappers();
+
+            //ControllerBuilder.Current.SetControllerFactory(typeof(CustomControllerFactory));
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

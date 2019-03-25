@@ -2,45 +2,87 @@
 
 @{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_LayoutPerson.cshtml";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
-<h2>Login</h2>
+<link href="~/Content/Login.css" rel="stylesheet" />
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "LoginDetails", name = "LoginDetails" }))
 {
-    <div class="form-horizontal">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group required">
-                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-3" })
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="form-group required">
-                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-3" })
-                    <div class="col-md-9">
-                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- 3 Columns standard media device, Center column for login. Small media device single column -->
 
     <div class="row">
-        <div class="col-sm-offset-1 col-sm-11">
-            @Html.ValidationSummary(false)
-        </div>
-    </div>
 
-    <input type="submit" value="Save" class="btn" />
-    <input type="submit" value="Cancel" class="btn" name="btn" formaction="@(Url.Action("PersonCancel"))" formnovalidate="formnovalidate" />
+        <section class="col-sm-8 col-md-6 col-sm-push-2 col-md-push-3">
+            <article class="MainContent">
+                <!-- center contents -->
+
+                <h3>Login</h3>
+
+                <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group required">
+                                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "Username" } })
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group required">
+                                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-sm-2 control-label" })
+                                <div class="col-sm-10">
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password", type = "password" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="LoginMessage">
+                    @Model.Message
+                </div>
+
+                @*<div class="row">
+                <div class="col-sm-offset-1 col-sm-11">
+                    @Html.ValidationSummary(false)
+                </div>
+            </div>*@
+
+                <div class="row">
+                    <div class="col-sm-offset-1 col-sm-11">
+                        <input type="submit" value="Submit" class="btn" />
+                        <input type="submit" value="Cancel" class="btn" name="btn" formaction="@(Url.Action("Welcome","home"))" formnovalidate="formnovalidate" />
+                    </div>
+                </div>
+
+            </article>
+        </section>
+
+        <!-- left -->
+        <aside class="col-sm-2 col-md-3 col-sm-pull-8 col-md-pull-3 hidden-xs">
+            <h4 class="Column-left-header">
+                <!-- left header -->
+            </h4>
+            <div class="Column-left-Contents">
+                <!-- left contents -->
+            </div>
+        </aside>
+
+        <!-- right -->
+        <aside class="col-sm-2 col-md-3 hidden-xs">
+            <h4 class="Column-right-header">
+                <!-- right header -->
+            </h4>
+            <div class="Column-right-Contents">
+                <!-- right contents -->
+            </div>
+        </aside>
+    </div>
 
 }

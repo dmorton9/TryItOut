@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TryItOut.CommonInterfaces;
 using TryItOut.DataAccess;
-using TryItOut.Logic.DTOs;
 
-namespace TryItOut.Logic
+namespace TryItOut.Service
 {
-    public class RegisteredUsersService
+
+    public class RegisteredUsersService : IRegisteredUsersService
     {
-        IRegisteredUserRepository repo;
+        private readonly IRegisteredUserRepository repo;
 
         public RegisteredUsersService()
         {
@@ -52,14 +52,6 @@ namespace TryItOut.Logic
 
         public void Save()
         {
-            var user = repo.Read();
-
-            List<Domain.Models.RegisteredUser> users = new List<Domain.Models.RegisteredUser>();
-
-            users.Add(new Domain.Models.RegisteredUser() { Identifier = 1, Username = "Admin", Firstname = "System", Lastname = "Admin", Password = "", IsActive = true });
-            users.Add(new Domain.Models.RegisteredUser() { Identifier = 2, Username = "dmorton9", Firstname="David", Lastname="Morton", Password = "", IsActive = true });
-
-            repo.Save(users);
         }
 
         /* ******************************** */
@@ -68,11 +60,37 @@ namespace TryItOut.Logic
 
         public void Update()
         {
-            var user = repo.Read();
+        }
 
-            List<Domain.Models.RegisteredUser> users = new List<Domain.Models.RegisteredUser>();
+        public bool AuthenticateUser(string username, string password) {
 
-            repo.Save(users);
+            bool status = false;
+
+            var users = repo.Read();
+
+            return status;
+        }
+
+        public void Dispose()
+        {
+            /* ToDo */
+        }
+
+        public void Read(int identifier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public UserLoginDTO LoginUser(string username, string password)
+        {
+            UserLoginDTO dto = new UserLoginDTO();
+
+            RegisteredUsersService userServices = new RegisteredUsersService();
+
+            dto.IsLoggedIn = true;
+            dto.Message = "Invalid username and/or password";
+
+            return dto;
         }
     }
 }

@@ -68,8 +68,7 @@ article img {
 
 /*is the h4 element*/
 .Column-right-header {
-    color: green;
-    background-color: dimgrey;
+
 }
 
 .top_menu_list {
@@ -210,8 +209,6 @@ a.top_menu_list_item_anchor:hover {
 
 @media (max-width: 991px ) {
     .Column-right-header {
-        color: white;
-        background-color: black;
     }
 
     .navbar {
@@ -219,12 +216,12 @@ a.top_menu_list_item_anchor:hover {
         margin-left: 5px;
     }
 
-        .navbar img {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            margin: auto;
-        }
+    .navbar img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
 }
 
 @media (max-width: 767px ) {

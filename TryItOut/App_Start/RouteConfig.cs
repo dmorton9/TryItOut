@@ -17,7 +17,13 @@ namespace TryItOut
                 name: "ToDoTasks",
                 url: "ToDoTasks/{action}/{id}",
                 defaults: new { controller = "ToDoTasks", action = "ToDo", id = UrlParameter.Optional }
-);
+            );
+
+            routes.MapRoute(
+                name: "Welcome",
+                url: "Welcome/{action}/{id}",
+                defaults: new { controller = "Home", action = "Welcome", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

@@ -18,6 +18,6 @@ namespace TryItOut.Domain
 
         string Identifier { get; set; }
 
-        DateTime? BirthDate { get; set; }
+        DateTime? dob { get; set; }
     }
 }

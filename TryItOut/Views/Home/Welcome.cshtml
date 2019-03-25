@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+    Layout = "~/Views/Shared/_LayoutWelcome.cshtml";
+}
+<link href="~/Content/Welcome.css" rel="stylesheet" />
+<script src="~/Scripts/Welcome.js"></script>
+
+
+<!-- background Image-->
+<section class="row">
+    <div class="img-responsive fill-screen fixed-attachment" style="background-image: url(../../Content/images/SoftwareDevelopment.png);">
+
+        <!-- down button/arrow -->
+        <div class="userlocked-button">
+            <span id="userlocked"><img src="~/Content/images/User-Locked.png" /></span>
+        </div>
+
+    </div>
+</section>
+
+<script>
+
+$(function () {
+    $("#userlocked").on("click", function () {
+        window.location.href = '@Url.Action("Login", "Person")';
+    });
+});
+
+</script>

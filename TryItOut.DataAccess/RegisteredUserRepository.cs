@@ -15,12 +15,42 @@ namespace TryItOut.DataAccess
         {
         }
 
+        public bool authenticate(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Create(List<RegisteredUser> entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Delete(RegisteredUser entity)
         {
             throw new NotImplementedException();
         }
 
         public bool Delete(int identity )
+        {
+            throw new NotImplementedException();
+        }
+
+        public string LastLoggedIn_Read(int identifier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void LastLoggedIn_Update(int identifier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string NumberOfAtempts_Read(int identifier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void NumberOfAtempts_Update(int identifier)
         {
             throw new NotImplementedException();
         }
@@ -33,14 +63,22 @@ namespace TryItOut.DataAccess
         public IList<RegisteredUser> Read()
         {
             IList<RegisteredUser> users = new List<RegisteredUser>();
-            string filePath = HttpContext.Current.Server.MapPath("~/App_Data/RegisteredUsers.xml");
 
-            System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(users.GetType());
-            System.IO.StreamReader file = new System.IO.StreamReader(filePath);
+            try
+            {               
+                string filePath = HttpContext.Current.Server.MapPath("~/App_Data/RegisteredUsers.xml");
 
-            users = (List<RegisteredUser>)reader.Deserialize(file);
+                System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(users.GetType());
+                System.IO.StreamReader file = new System.IO.StreamReader(filePath);
 
-            file.Close();
+                users = (List<RegisteredUser>)reader.Deserialize(file);
+
+                file.Close();
+            }
+            catch
+            {
+                throw new Exception();
+            }
 
             return users;
         }

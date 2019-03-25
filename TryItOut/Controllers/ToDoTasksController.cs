@@ -8,7 +8,7 @@ using TryItOut.Areas.ToDoTasks.Helpers.Views;
 using TryItOut.Areas.ToDoTasks.ViewModels;
 using TryItOut.ToDoTasks.ViewModels;
 
-namespace TryItOut.Areas.ToDoTasks.Controllers
+namespace TryItOut.Controllers
 {
     public class ToDoTasksController : Controller
     {

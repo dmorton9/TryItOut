@@ -8,7 +8,5 @@ namespace TryItOut.CommonInterfaces
 {
     public interface ILogin
     {
-        int attempts { get; set; }
-        bool Authenticate(string username, string password);
     }
 }

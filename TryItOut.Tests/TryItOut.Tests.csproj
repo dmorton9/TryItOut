@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="AutoMapper\AutoMapper.cs" />
     <Compile Include="Controllers\DevelopmentController.cs" />
+    <Compile Include="Controllers\PersonControllerTest.cs" />
     <Compile Include="FileProcess\FileProcess.cs" />
     <Compile Include="ToDoTasks\ToDoTasks.cs" />
     <Compile Include="UnitTestingInitialisation.cs" />

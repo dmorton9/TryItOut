@@ -53,8 +53,11 @@
     <Compile Include="Common\UnitOfWork-ToDoTasks.cs" />
     <Compile Include="DTOs\RegisteredUsersDTO.cs" />
     <Compile Include="DTOs\ToDoTasksDTO.cs" />
-    <Compile Include="IToDoTasksUnitOfWork.cs" />
-    <Compile Include="Login.cs" />
+    <Compile Include="DTOs\UserLoginDTO.cs" />
+    <Compile Include="Interfaces\ILogin-UnitOfWork.cs" />
+    <Compile Include="Interfaces\ILogin_Service.cs" />
+    <Compile Include="Login_UnitOfWork.cs" />
+    <Compile Include="Login_Service.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonsDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

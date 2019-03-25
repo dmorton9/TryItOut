@@ -84,4 +84,8 @@ namespace TryItOut.Areas.ToDoTasks.Helpers.Views
             return status;
         }
     }
+
+    public interface IToDoTasksUnitOfWork
+    {
+    }
 }

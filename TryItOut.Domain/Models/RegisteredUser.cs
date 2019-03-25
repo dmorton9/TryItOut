@@ -13,13 +13,15 @@ namespace TryItOut.Domain.Models
         private string _password;
         private string _firstname;
         private string _lastname;
-        private bool _IsActive;
+        private string _IsActive;
+        private string _lastLoggedIn;
 
         public int Identifier { get => _identifier; set => _identifier = value; }
         public string Username { get => _username; set => _username = value; }
         public string Password { get => _password; set => _password = value; }
         public string Firstname { get => _firstname; set => _firstname = value; }
         public string Lastname { get => _lastname; set => _lastname = value; }
-        public bool IsActive { get => _IsActive; set => _IsActive = value; }
+        public string IsActive { get => _IsActive; set => _IsActive = value; }
+        public string LastLoggedIn { get => _lastLoggedIn; set => _lastLoggedIn = value; }
     }
 }
