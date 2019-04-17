@@ -22,43 +22,43 @@ namespace TryItOut
      * using an IoC dependency Injection UNITY 
      * ******************************************************************** */
 
-    public class CustomControllerFactory : IControllerFactory
-    {
-        private readonly string _controllerNamespace = "TryItOut.Controllers";
+    //public class CustomControllerFactory : IControllerFactory
+    //{
+    //    private readonly string _controllerNamespace = "TryItOut.Controllers";
 
-        public CustomControllerFactory()
-        {
-        }
+    //    public CustomControllerFactory()
+    //    {
+    //    }
 
-        public IController CreateController(System.Web.Routing.RequestContext requestContext, string controllerName)
-        {
-            Type controllerType = Type.GetType(string.Concat(_controllerNamespace, ".", controllerName, "Controller"));
-            IController controller = Activator.CreateInstance(controllerType) as Controller;
+    //    public IController CreateController(System.Web.Routing.RequestContext requestContext, string controllerName)
+    //    {
+    //        Type controllerType = Type.GetType(string.Concat(_controllerNamespace, ".", controllerName, "Controller"));
+    //        IController controller = Activator.CreateInstance(controllerType) as Controller;
 
-            if( controllerName == "Person")
-            {
-                ILogin_Service loginService = new Login_Service();
-                controller = Activator.CreateInstance(controllerType, new[] { loginService } ) as Controller;
-            }
+    //        if( controllerName == "Person")
+    //        {
+    //            ILogin_Service loginService = new Login_Service();
+    //            controller = Activator.CreateInstance(controllerType, new[] { loginService } ) as Controller;
+    //        }
 
-            return controller;
-        }
+    //        return controller;
+    //    }
 
-        public System.Web.SessionState.SessionStateBehavior GetControllerSessionBehavior(System.Web.Routing.RequestContext requestContext, string controllerName)
-        {
-            return SessionStateBehavior.Default;
-        }
+    //    public System.Web.SessionState.SessionStateBehavior GetControllerSessionBehavior(System.Web.Routing.RequestContext requestContext, string controllerName)
+    //    {
+    //        return SessionStateBehavior.Default;
+    //    }
 
-        public void ReleaseController(IController controller)
-        {
-            var disposable = controller as IDisposable;
-            if (disposable != null)
-            {
-                disposable.Dispose();
-            }
+    //    public void ReleaseController(IController controller)
+    //    {
+    //        var disposable = controller as IDisposable;
+    //        if (disposable != null)
+    //        {
+    //            disposable.Dispose();
+    //        }
 
-        }
-    }
+    //    }
+    //}
 
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -131,7 +131,7 @@ namespace TryItOut
 
         protected void Application_EndRequest(object sender, EventArgs e)
         {
-            int unitOfWorkId = 0;
+            Common.UnitOfWork.Dispose();
         }
 
         protected void Application_End()

@@ -20,6 +20,11 @@ namespace TryItOut.DataAccess
             throw new NotImplementedException();
         }
 
+        public bool Authenticate(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Create(List<RegisteredUser> entity)
         {
             throw new NotImplementedException();
@@ -42,7 +47,27 @@ namespace TryItOut.DataAccess
 
         public void LastLoggedIn_Update(int identifier)
         {
-            throw new NotImplementedException();
+            /* ****************************************************************** */
+            /* Find user, update last login together and reset number of attempts */
+            /* ****************************************************************** */
+
+            try
+            {
+                var users = Read().ToList();
+
+                if (users.Exists(x => x.Identifier == identifier))
+                {
+                    var user = users.Single(x => x.Identifier == identifier);
+                    user.LastLoggedIn = DateTime.Now.ToShortDateString();
+                    user.NumberOfAttemps = 0;
+                    Save(users);
+                }
+            }
+            catch
+            {
+                throw new NotSupportedException();
+            }
+           
         }
 
         public string NumberOfAtempts_Read(int identifier)
@@ -50,14 +75,50 @@ namespace TryItOut.DataAccess
             throw new NotImplementedException();
         }
 
+        public string NumberOfAtempts_Read(string username)
+        {
+            throw new NotImplementedException();
+        }
+
         public void NumberOfAtempts_Update(int identifier)
+        {
+            var users = Read().ToList();
+            var user = users.Find(x => x.Identifier == identifier);
+
+            if(user != null)
+            {
+                user.NumberOfAttemps++;
+                Save(users);
+            }
+        }
+
+        public void NumberOfAtempts_Update(int identifier, int numberOfAttempts)
         {
             throw new NotImplementedException();
         }
 
         public RegisteredUser Read(int identifier)
         {
-            throw new NotImplementedException();
+            RegisteredUser user = new RegisteredUser();
+            var users = Read().ToList();
+
+            /* returns null if no matches,
+             * therefore a state pattern ? */
+            user = users.Find(x => x.Identifier == identifier);
+
+            return user;
+        }
+
+        public RegisteredUser Read(string username)
+        {
+            RegisteredUser user = new RegisteredUser();
+            var users = Read().ToList();
+
+            /* returns null if no matches,
+             * therefore a state pattern ? */
+            user = users.Find(x => x.Username == username);
+
+            return user;
         }
 
         public IList<RegisteredUser> Read()

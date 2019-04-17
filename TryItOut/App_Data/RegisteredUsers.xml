@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfRegisteredUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <RegisteredUser>
-    <identifier>1</identifier>
-    <username>dmorton</username>
-    <password>ABC$123</password>
-    <firstname>David</firstname>
-    <lastname>Morton</lastname>
-    <IsActive>Locked</IsActive>
-    <lastLoggedIn>Never</lastLoggedIn>
+    <Identifier>1</Identifier>
+    <Username>dmorton</Username>
+    <Password>ABC$123</Password>
+    <Firstname>David</Firstname>
+    <Lastname>Morton</Lastname>
+    <IsActive>Active</IsActive>
+    <LastLoggedIn>15/04/2019</LastLoggedIn>
+    <NumberOfAttemps>0</NumberOfAttemps>
   </RegisteredUser>
   <RegisteredUser>
-    <identifier>2</identifier>
-    <username>esmith</username>
-    <password>ABC$123</password>
-    <firstname>Ellen</firstname>
-    <lastname>Smith</lastname>
+    <Identifier>2</Identifier>
+    <Username>esmith</Username>
+    <Password>ABC$123</Password>
+    <Firstname>Ellen</Firstname>
+    <Lastname>Smith</Lastname>
     <IsActive>Locked</IsActive>
-    <lastLoggedIn>Never</lastLoggedIn>
+    <LastLoggedIn>Never</LastLoggedIn>
+    <NumberOfAttemps>1</NumberOfAttemps>
   </RegisteredUser>
   <RegisteredUser>
-    <identifier>3</identifier>
-    <username>mjones</username>
-    <password>ABC$123</password>
-    <firstname>Mark</firstname>
-    <lastname>Jones</lastname>
+    <Identifier>3</Identifier>
+    <Username>mjones</Username>
+    <Password>ABC$123</Password>
+    <Firstname>Mark</Firstname>
+    <Lastname>Jones</Lastname>
     <IsActive>Locked</IsActive>
-    <lastLoggedIn>Never</lastLoggedIn>
+    <LastLoggedIn>Never</LastLoggedIn>
+    <NumberOfAttemps>1</NumberOfAttemps>
   </RegisteredUser>
 </ArrayOfRegisteredUser>

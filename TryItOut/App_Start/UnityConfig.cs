@@ -1,6 +1,7 @@
 using System.Web.Mvc;
 using TryItOut.CommonInterfaces;
 using TryItOut.DataAccess;
+using TryItOut.Helpers.Views;
 using TryItOut.Service;
 using Unity;
 using Unity.Mvc5;
@@ -22,7 +23,11 @@ namespace TryItOut
 
             container.RegisterType<IRegisteredUserRepository, RegisteredUserRepository>();
 
-        DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+            container.RegisterType<ILogin_UnitOfWork, Login_UnitOfWork>();
+
+            container.RegisterType<IViewModelFactory, ViewModelFactory>();
+       
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }
     }
 }

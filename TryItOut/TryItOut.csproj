@@ -51,6 +51,12 @@
     <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.2.0\lib\net45\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -188,10 +194,16 @@
     <Compile Include="Helpers\Filters\GlobalFilter.cs" />
     <Compile Include="Helpers\Filters\FooterFilter.cs" />
     <Compile Include="Helpers\Logger\LogModule.cs" />
+    <Compile Include="Helpers\Views\IViewModelFactory.cs" />
     <Compile Include="Helpers\Views\ToDoTasks.cs" />
+    <Compile Include="Helpers\Views\ViewModelFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AboutViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MessageBaseViewModel.cs" />
     <Compile Include="ViewModels\NewTaskViewModel.cs" />
     <Compile Include="ViewModels\PersonViewModel.cs" />
     <Compile Include="ViewModels\ToDoTasksViewModel.cs" />
@@ -489,6 +501,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Tasks.Common\Common\Common\Common.csproj">
+      <Project>{08624976-b3f3-4e0e-b95b-6361aca593f5}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TryItOut.CommonInterfaces\TryItOut.CommonInterfaces.csproj">
       <Project>{a509c877-6bd7-441b-ae1c-1c219bbf8df7}</Project>
       <Name>TryItOut.CommonInterfaces</Name>
@@ -524,7 +540,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>63796</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost.TryItOut</IISUrl>
+          <IISUrl>http://localhost/TryItOut</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

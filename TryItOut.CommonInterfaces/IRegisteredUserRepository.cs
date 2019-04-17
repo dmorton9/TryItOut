@@ -12,7 +12,10 @@ namespace TryItOut.CommonInterfaces
 
         /* Read user from XML file */
         IList<RegisteredUser> Read();
+
         RegisteredUser Read(int identifier);
+
+        RegisteredUser Read(string username);
         /* ************************* */
 
         /* Read user from XML file */
@@ -24,12 +27,6 @@ namespace TryItOut.CommonInterfaces
         bool Create(List<RegisteredUser> entity);
         /* ************************* */
 
-        /* authenticate user against XML file */
-        bool Authenticate(string username, string password);
-
-        UserLogin IsValidUser(string username, string password);
-        /* ********************************** */
-
         /* Last logged In details for user from XML file */
         string LastLoggedIn_Read(int identifier);
 
@@ -39,7 +36,11 @@ namespace TryItOut.CommonInterfaces
         /* number of attempts details for user from XML file */
         string NumberOfAtempts_Read(int identifier);
 
+        string NumberOfAtempts_Read(string username);
+
         void NumberOfAtempts_Update(int identifier,int numberOfAttempts);
+
+        void NumberOfAtempts_Update(int identifier);
         /* ******************************************** */
     }
 }

@@ -15,6 +15,7 @@ namespace TryItOut.Domain.Models
         private string _lastname;
         private string _IsActive;
         private string _lastLoggedIn;
+        private int _NumberOfAttempts;
 
         public int Identifier { get => _identifier; set => _identifier = value; }
         public string Username { get => _username; set => _username = value; }
@@ -23,5 +24,6 @@ namespace TryItOut.Domain.Models
         public string Lastname { get => _lastname; set => _lastname = value; }
         public string IsActive { get => _IsActive; set => _IsActive = value; }
         public string LastLoggedIn { get => _lastLoggedIn; set => _lastLoggedIn = value; }
+        public int NumberOfAttemps { get => _NumberOfAttempts; set => _NumberOfAttempts = value; }
     }
 }

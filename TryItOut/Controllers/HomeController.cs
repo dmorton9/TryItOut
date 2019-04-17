@@ -6,28 +6,34 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TryItOut.Controllers.BaseControllers;
+using TryItOut.Helpers.Views;
 using TryItOut.ViewModels;
 
 namespace TryItOut.Controllers
 {
     public class HomeController : BaseController
     {
-        private static readonly ILog log = LogManager.GetLogger(typeof(HomeController));
+        readonly IViewModelFactory viewfactory;
+
+        public HomeController(IViewModelFactory viewfactory)
+        {
+            this.viewfactory = viewfactory;
+        }
 
         public ActionResult Index()
         {
-            BasicConfigurator.Configure();
+            /* create a factory class/method to create viewmodel */
+            var vm = viewfactory.CreateHomeViewModel("Home", "Welcome");
 
-            log.Info("Home controller");
-
-            return View("Index");
+            return View("Index",vm);
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            /* create a factory class/method to create viewmodel */
+            var vm = viewfactory.CreateAboutViewModel();
 
-            return View("About");
+            return View("About", vm);
         }
 
         public ActionResult Welcome() => View("Welcome");

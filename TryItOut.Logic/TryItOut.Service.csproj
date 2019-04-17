@@ -51,13 +51,18 @@
     <Compile Include="Common\IUnitOfWork.cs" />
     <Compile Include="Common\UnitOfWork-Home.cs" />
     <Compile Include="Common\UnitOfWork-ToDoTasks.cs" />
+    <Compile Include="ControllerUnitOfWork.cs" />
     <Compile Include="DTOs\RegisteredUsersDTO.cs" />
     <Compile Include="DTOs\ToDoTasksDTO.cs" />
     <Compile Include="DTOs\UserLoginDTO.cs" />
     <Compile Include="Interfaces\ILogin-UnitOfWork.cs" />
     <Compile Include="Interfaces\ILogin_Service.cs" />
+    <Compile Include="LoginChecks\CheckAttempts.cs" />
+    <Compile Include="LoginChecks\CheckLocked.cs" />
+    <Compile Include="LoginChecks\CheckPassword.cs" />
     <Compile Include="Login_UnitOfWork.cs" />
     <Compile Include="Login_Service.cs" />
+    <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonsDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +70,10 @@
     <Compile Include="ToDoTasks.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Tasks.Common\Common\Common\Common.csproj">
+      <Project>{08624976-B3F3-4E0E-B95B-6361ACA593F5}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TryItOut.CommonInterfaces\TryItOut.CommonInterfaces.csproj">
       <Project>{a509c877-6bd7-441b-ae1c-1c219bbf8df7}</Project>
       <Name>TryItOut.CommonInterfaces</Name>

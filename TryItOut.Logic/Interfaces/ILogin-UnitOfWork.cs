@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TryItOut.DataAccess;
 using TryItOut.Domain.Models;
+using TryItOut.Service.Models;
 
 namespace TryItOut.CommonInterfaces
 {

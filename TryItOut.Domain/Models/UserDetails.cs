@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TryItOut.Domain.Models
 {
-    public class UserLogin   {
-
+    public class UserDetails
+    {
         private bool _IsLoggedIn;
         private int _Identifier;
         private string _UserName;
@@ -17,21 +17,11 @@ namespace TryItOut.Domain.Models
         private int _NumberOfAttempts;
 
         public bool IsLoggedIn { get => _IsLoggedIn; set => _IsLoggedIn = value; }
-        public string LastLoggedIn { get => _LastLoggedIn; set => _LastLoggedIn = value; }
-        public int NumberOfAttempts { get => _NumberOfAttempts; set => _NumberOfAttempts = value; }
         public int Identifier { get => _Identifier; set => _Identifier = value; }
+        public string UserName { get => _UserName; set => _UserName = value; }
         public string LastName { get => _LastName; set => _LastName = value; }
         public string FirstName { get => _FirstName; set => _FirstName = value; }
-        public string UserName { get => _UserName; set => _UserName = value; }
-
-        public UserLogin()
-        {
-            IsLoggedIn = false;
-
-            UserName = string.Empty;
-            FirstName = string.Empty;
-            UserName = string.Empty;
-            LastLoggedIn = string.Empty;
-        }
+        public string LastLoggedIn { get => _LastLoggedIn; set => _LastLoggedIn = value; }
+        public int NumberOfAttempts { get => _NumberOfAttempts; set => _NumberOfAttempts = value; }
     }
 }

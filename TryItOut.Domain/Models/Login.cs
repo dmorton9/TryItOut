@@ -14,5 +14,13 @@ namespace TryItOut.Domain.Models
 
         public string UserName { get => _userName; set => _userName = value; }
         public string Password { get => _password; set => _password = value; }
+
+        public Login() { }
+
+        public Login(string username,string password)
+        {
+            UserName = username;
+            Password = password;
+        }
     }
 }
